@@ -1,6 +1,7 @@
-/**
- * Created by jakob on 24/12/13.
- */
+import fetcher.DBAFetcher
+
 object Fetcher extends App {
-  
+  val fetcher = new DBAFetcher()
+  fetcher request
 }
+
