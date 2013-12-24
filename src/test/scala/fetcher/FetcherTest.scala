@@ -1,7 +1,6 @@
-package org.scalatest.examples.flatspec
+package fetcher
 
 import org.scalatest.FlatSpec
-import fetcher.DBAFetcher
 
 class FetcherMergeParamsTest extends FlatSpec {
   val map1 = Map(
