@@ -33,12 +33,12 @@ object DBAFetcher {
 class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] = Map()) {
 
   val headers = Map(
-      "X-Dba-AppVersion" -> "2.2",
-      //"Accept-Encoding" -> "gzip,deflate", // don't encode response on second request
-      "Accept" -> "application/json",
-      "dbaapikey" -> Config.DBA.apikey,
-      "Accept-Language" -> "da-dk",
-      "Cache-Control" -> "no-cache"
+    "X-Dba-AppVersion" -> "2.2",
+    //"Accept-Encoding" -> "gzip,deflate", // don't encode response on second request
+    "Accept" -> "application/json",
+    "dbaapikey" -> Config.DBA.apikey,
+    "Accept-Language" -> "da-dk",
+    "Cache-Control" -> "no-cache"
   )
 
   def request = {
