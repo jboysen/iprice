@@ -1,3 +1,5 @@
+package iprice
+
 import models.DB
 
 object Main extends App {

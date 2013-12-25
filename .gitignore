@@ -1,3 +1,5 @@
+config.properties
+
 *.class
 *.log
 
@@ -6,7 +8,7 @@ dist/*
 target/
 lib_managed/
 src_managed/
-project/boot/
+project/iprice.boot/
 project/plugins/project/
 
 # Scala-IDE specific
@@ -30,7 +32,7 @@ project/plugins/project/
 /.idea/
 .idea/
 .idea_modules/
-/project/boot/
+/project/iprice.boot/
 /project/plugins/project
 target/
 lib_managed/

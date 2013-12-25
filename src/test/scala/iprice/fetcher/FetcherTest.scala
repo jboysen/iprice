@@ -11,8 +11,7 @@ class FetcherMergeParamsTest extends FlatSpec {
     "key1" -> 2,
     "key3" -> 100
   )
-  val fetcher = new DBAFetcher()
-  val resultMap = fetcher.mergeParams(map1, map2)
+  val resultMap = DBAFetcher.mergeParams(map1, map2)
 
   "The result of mergeParams" should "merge two maps into a map with Strings as keys and values" in {
     assert(resultMap.isInstanceOf[Map[String, String]])
@@ -34,7 +33,7 @@ class FetcherMergeParamsTest extends FlatSpec {
 class FetcherTest extends FlatSpec {
   val fetcher10 = new DBAFetcher(page=10)
 
-  "The params of the fetcher" should "contain 10 at the DBAFetcher.KeyPage" in {
+  "The params of the iprice.fetcher" should "contain 10 at the DBAFetcher.KeyPage" in {
     assertResult(Some("10"))(fetcher10.params.get(DBAFetcher.KeyPage))
   }
 
@@ -49,5 +48,13 @@ class FetcherUrlTest extends FlatSpec {
 
   "The url" should "contain the default parameters" in {
     assertResult("http://api.dba.dk/api/v2/ads/cassearch?pn=1&f=json&pe=0&ps=100&at=2&filters=1&cla=27160")(fetcher.url.toString())
+  }
+}
+
+class FetcherRequestTest extends FlatSpec {
+  val req = new DBAFetcher() request
+
+  "The request" should "return a non-empty string" in {
+    assert(!req.isEmpty)
   }
 }

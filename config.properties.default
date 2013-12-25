@@ -1,0 +1,6 @@
+DB.user=root
+DB.password=
+DB.host=localhost
+DB.database=iprice_dev
+DB.port=3306
+DBA.apikey=
