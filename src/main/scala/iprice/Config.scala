@@ -8,7 +8,7 @@ object Config {
   try {
     props.load(new FileInputStream("config.properties"))
   } catch {
-    case e: Exception => props.load(new FileInputStream("config.properties.default"))
+    case e: Exception => props.load(new FileInputStream("config.default.properties"))
   }
 
   object DB {
