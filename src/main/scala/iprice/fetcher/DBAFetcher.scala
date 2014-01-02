@@ -9,7 +9,8 @@ import java.util.zip.GZIPInputStream
  * Companion object holding constants and defining general methods.
  */
 object DBAFetcher {
-  val KeyPage = "pn"
+  val ApiKeyPage = "pn"
+  val ApiUrl = "http://api.dba.dk/api/v2/ads/cassearch"
 
   /**
    *
@@ -35,7 +36,7 @@ class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] =
 
   val headers = Map(
     "X-Dba-AppVersion" -> "2.2",
-    "Accept-Encoding" -> "gzip,deflate", 
+    "Accept-Encoding" -> "gzip,deflate",
     "Accept" -> "application/json",
     "dbaapikey" -> Config.DBA.apikey,
     "Accept-Language" -> "da-dk",
@@ -65,12 +66,12 @@ class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] =
       "at" -> 2,
       "pe" -> 0,
       "ps" -> 100,
-      DBAFetcher.KeyPage -> page,
+      DBAFetcher.ApiKeyPage -> page,
       "f" -> "json",
       "filters" -> 1
     )
     DBAFetcher.mergeParams(defaultParams, additionalParams)
   }
 
-  def url = Uri("http://api.dba.dk/api/v2/ads/cassearch") withQuery params
+  def url = Uri(DBAFetcher.ApiUrl) withQuery params
 }
