@@ -24,7 +24,7 @@ class DBAParser(private var rawInput: String = "") {
   def getTotalPages = {
     val pages = parse \ DBAParser.Keys.Info \ DBAParser.Keys.Pages
     if (pages == JNothing)
-      sys.error("The entry was not found in the given JSON object.")
+      sys.error("The entry " + DBAParser.Keys.Info + "." + DBAParser.Keys.Pages + " was not found in the given JSON object.")
     else pages.extract[Int]
   }
 

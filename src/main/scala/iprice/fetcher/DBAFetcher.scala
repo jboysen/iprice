@@ -3,6 +3,7 @@ package fetcher
 import spray.http.Uri
 import iprice.Config
 import java.net.URL
+import java.util.zip.GZIPInputStream
 
 /**
  * Companion object holding constants and defining general methods.
@@ -34,7 +35,7 @@ class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] =
 
   val headers = Map(
     "X-Dba-AppVersion" -> "2.2",
-    //"Accept-Encoding" -> "gzip,deflate", // don't encode response on second request
+    "Accept-Encoding" -> "gzip,deflate", 
     "Accept" -> "application/json",
     "dbaapikey" -> Config.DBA.apikey,
     "Accept-Language" -> "da-dk",
@@ -46,7 +47,12 @@ class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] =
     headers.foreach({
       case (name, value) => connection.setRequestProperty(name, value)
     })
-    scala.io.Source.fromInputStream(connection.getInputStream).getLines.mkString("\n")
+    val stream =
+      if (connection.getHeaderField("Content-Encoding") == "gzip")
+        new GZIPInputStream(connection.getInputStream)
+      else
+        connection.getInputStream
+    scala.io.Source.fromInputStream(stream).getLines.mkString("\n")
   }
 
   def setPage(p: Int) {
