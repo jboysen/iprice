@@ -35,12 +35,12 @@ class FetcherTest extends FlatSpec {
   val fetcher10 = new DBAFetcher(page=10)
 
   "The params of the iprice.fetcher" should "contain 10 at the DBAFetcher.KeyPage" in {
-    assertResult(Some("10"))(fetcher10.params.get(DBAFetcher.KeyPage))
+    assertResult(Some("10"))(fetcher10.params.get(DBAFetcher.ApiKeyPage))
   }
 
   it should "return 20 when setPage has been called" in {
     fetcher10.setPage(20)
-    assertResult(Some("20"))(fetcher10.params.get(DBAFetcher.KeyPage))
+    assertResult(Some("20"))(fetcher10.params.get(DBAFetcher.ApiKeyPage))
   }
 }
 
