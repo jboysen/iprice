@@ -3,7 +3,7 @@ package fetcher
 import spray.http.Uri
 import java.net.URL
 import java.util.zip.GZIPInputStream
-import iprice.config.Configuration
+import iprice.config.Config
 
 /**
  * Companion object holding constants and defining general methods.
@@ -32,7 +32,7 @@ object DBAFetcher {
  * @param page
  * @param additionalParams
  */
-class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] = Map()) extends Configuration {
+class DBAFetcher(private var page: Int = 1, additionalParams: Map[String, Any] = Map()) {
   val headers = Map(
     "X-Dba-AppVersion" -> "2.2",
     "Accept-Encoding" -> "gzip,deflate",
