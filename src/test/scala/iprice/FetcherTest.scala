@@ -34,7 +34,7 @@ class FetcherMergeParamsTest extends FlatSpec {
 class FetcherTest extends FlatSpec {
   val fetcher10 = new DBAFetcher(page=10)
 
-  "The params of the iprice.fetcher" should "contain 10 at the DBAFetcher.KeyPage" in {
+  "The params of the iprice.dba" should "contain 10 at the DBAFetcher.KeyPage" in {
     assertResult(Some("10"))(fetcher10.params.get(DBAFetcher.ApiKeyPage))
   }
 
