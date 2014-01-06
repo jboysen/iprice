@@ -1,8 +1,9 @@
 package iprice
 
 import org.scalatest.FlatSpec
+import iprice.config.Configuration
 
-class ConfigTest extends FlatSpec {
+class ConfigTest extends FlatSpec with Configuration {
 
   "The DB.host field of the Config object" should "equal to localhost (should work in most configurations)" in {
     assertResult("localhost")(Config.DB.host)
