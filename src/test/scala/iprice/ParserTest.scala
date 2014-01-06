@@ -1,6 +1,7 @@
 package iprice
 
 import _root_.fetcher.DBAParser
+import _root_.models.Ad
 import org.scalatest.FlatSpec
 import org.json4s.JsonAST.JValue
 
@@ -215,13 +216,18 @@ class ParserTest extends FlatSpec {
   val parser = new DBAParser(ParserTest.rawInput)
   val parsed = parser parse
   val number = parser getTotalPages
+  val ads = parser getAds
 
   "The result of parse" should "return a parsed JSON object" in {
     assert(parsed.isInstanceOf[JValue])
   }
 
-  it should "return an Int with value 92" in {
+  "The result of getTotalPages" should "be an Int with value 92" in {
     assertResult(92)(number)
+  }
+
+  "The result of getAds" should "be a list of Ads" in {
+    assert(ads.isInstanceOf[List[Ad]])
   }
 
   val parser2 = new DBAParser(ParserTest.rawInput2)

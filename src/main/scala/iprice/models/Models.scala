@@ -14,3 +14,8 @@ case class Calculation(
                   all_prices: String,
                   created_at: org.joda.time.DateTime
                         )
+
+case class Ad(
+                price: Int,
+                metaData: Map[String, String]
+               )
