@@ -1,7 +1,7 @@
 package iprice.boot
 
 import fetcher.{DBAParser, DBAFetcher}
-import com.typesafe.scalalogging.slf4j.Logging
+import com.typesafe.scalalogging.log4j.Logging
 
 object Fetcher extends App with Logging {
 
