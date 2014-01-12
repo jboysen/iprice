@@ -61,7 +61,7 @@ class DBAParser(private var rawInput: String = "") {
     else pages.extract[Int]
   }
 
-  def getAds = {
+  def getAds: List[Ad] = {
     val info = parse \ DBAParser.Keys.Info
     val ads = parse \ DBAParser.Keys.Ads
     if (ads == JNothing || info == JNothing)
