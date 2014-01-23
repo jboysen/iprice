@@ -10,6 +10,6 @@ class ConfigTest extends FlatSpec {
   }
 
   "The DB.port field of the Config object" should "equal to the Integer 3306 (should work in most configurations)" in {
-    assertResult(3306)(Config.DB.port)
+    assertResult(27017)(Config.DB.port)
   }
 }

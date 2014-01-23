@@ -10,8 +10,9 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.sorm-framework" % "sorm" % "0.3.11",
-  "mysql" % "mysql-connector-java" % "5.1.27",
+  //"org.sorm-framework" % "sorm" % "0.3.11",
+  //"mysql" % "mysql-connector-java" % "5.1.27",
+  "org.mongodb" %% "casbah" % "2.6.3",
   "io.spray" % "spray-http" % "1.2.0",
   "com.typesafe.akka" %% "akka-actor" % "2.2.3",
   "org.scalatest" % "scalatest_2.10" % "2.0" % "test",

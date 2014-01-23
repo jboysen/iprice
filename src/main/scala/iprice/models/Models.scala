@@ -11,8 +11,7 @@ case class Calculation(
                   num: Int,
                   not_used_prices: String,
                   used_prices: String,
-                  all_prices: String,
-                  created_at: org.joda.time.DateTime
+                  all_prices: String
                         )
 
 case class Ad(

@@ -3,10 +3,12 @@ package iprice.boot
 import fetcher.{DBAParser, DBAFetcher}
 import com.typesafe.scalalogging.log4j.Logging
 import models.Ad
+import iprice.dba.DBACalc
 
 object Fetcher extends App with Logging {
 
   logger.debug("Starting fetcher...")
+
   val fetcher = new DBAFetcher()
   val parser = new DBAParser(fetcher request)
   val totalPages = parser getTotalPages
@@ -24,6 +26,10 @@ object Fetcher extends App with Logging {
   }
 
   val allAds = addAds(List[Ad](), 1)
+
+  val calc = new DBACalc(allAds)
+
+
 
   logger.debug("Done fetching pages...\nStarting calculations...")
 }
