@@ -1,4 +1,4 @@
-package models
+package iprice.models
 
 case class Unit(
                   title: String,

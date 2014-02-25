@@ -1,4 +1,4 @@
-package fetcher
+package iprice.dba
 
 import spray.http.Uri
 import java.net.URL

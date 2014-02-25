@@ -1,8 +1,8 @@
 package iprice.boot
 
-import fetcher.{DBAParser, DBAFetcher}
+import iprice.dba.{DBAParser, DBAFetcher}
 import com.typesafe.scalalogging.log4j.Logging
-import models.Ad
+import iprice.models.Ad
 import iprice.dba.DBACalc
 
 object Fetcher extends App with Logging {

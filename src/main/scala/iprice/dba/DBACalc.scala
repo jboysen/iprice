@@ -1,6 +1,6 @@
 package iprice.dba
 
-import models.Ad
+import iprice.models.Ad
 
 class DBACalc(private val ads: List[Ad]) {
   def classify {

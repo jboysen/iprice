@@ -1,6 +1,6 @@
 package iprice
 
-import _root_.fetcher.DBAFetcher
+import iprice.dba.DBAFetcher
 import org.scalatest.FlatSpec
 
 class FetcherMergeParamsTest extends FlatSpec {

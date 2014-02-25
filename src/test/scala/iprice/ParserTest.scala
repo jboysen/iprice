@@ -1,7 +1,7 @@
 package iprice
 
-import _root_.fetcher.DBAParser
-import _root_.models.Ad
+import iprice.dba.DBAParser
+import iprice.models.Ad
 import org.scalatest.FlatSpec
 import org.json4s.JsonAST.JValue
 

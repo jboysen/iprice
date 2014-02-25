@@ -1,9 +1,9 @@
-package fetcher
+package iprice.dba
 
 import org.json4s.native.JsonMethods
 import org.json4s.DefaultFormats
 import org.json4s.JsonAST._
-import models.Ad
+import iprice.models.Ad
 import org.json4s.JsonAST.JDouble
 import org.json4s.JsonAST.JInt
 import org.json4s.JsonAST.JArray
